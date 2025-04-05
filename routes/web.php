@@ -10,8 +10,13 @@
  
  
  Route::get('/', function () {
-     return view('welcome');
- });
+    return view('welcome', ['name' => 'pili-app']);
+});
+
+Route::get('/users', [UserController::class, 'index']);
+
+Route::resource('/products', Product::class);
+
  
  //Service Container
  Route::get('/test-container', function (Request $request){
@@ -78,7 +83,7 @@
      return $request->all();
  });
  
- //Controller -> Middleware
+/*  //Controller -> Middleware
  Route::get('/users', [UserController::class, 'Index'])->middleware('user-middleware');
  
  //Resource
@@ -88,4 +93,4 @@
  Route::get('/product-list', function (ProductService $productService){
      $data['products'] = $productService->listProducts();
      return view('products.list', $data);
- });
+ }); */

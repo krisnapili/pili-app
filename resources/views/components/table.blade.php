@@ -1,3 +1,3 @@
-<!-- <table class="table table-striped">
+<table class="table table-striped">
     {{ $slot }}
-</table> -->
+</table>
