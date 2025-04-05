@@ -13,7 +13,7 @@ class UserController extends Controller
     }
 
     public function first(UserService $userService) {
-        return collect($userService->listUsers())->first();
+        return view('users.index', ['users' => $userService->listUsers()]);
     }
 
     public function show(UserService $userService, $id) {
